@@ -1,6 +1,7 @@
 ﻿using M2ViewModelLib.ViewModels.Basic;
 using Screenshoter.Models;
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -14,6 +15,7 @@ namespace Screenshoter.ViewModels
 			HeightSize = 200;
 			Marging = new Thickness(200, 200, 0, 0);
 		}
+
 		/// <summary> Минимальные размеры выделеной области. </summary>
 		public static (double x, double y) SelectMinSize = (164, 100);
 		/// <summary> Окно SASelector </summary>

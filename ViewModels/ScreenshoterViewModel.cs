@@ -41,6 +41,7 @@ namespace Screenshoter.ViewModels
 			vm.ThisWindow = selector;
 			ScreenstotterWindow.Visibility = Visibility.Hidden;
 			selector.ShowDialog();
+			ScreenstotterWindow.Visibility = Visibility.Visible;
 		}
 		/// <summary> Создать скриншот из всего экрана. </summary>
 		private void MakeFullScreen() => ScreenshotMaker.MakeFullScreenAsynk();
