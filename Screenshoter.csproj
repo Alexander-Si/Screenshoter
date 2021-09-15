@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>screenshoterIcon.ico</ApplicationIcon>
+    <Authors>Alexander Si</Authors>
+    <Company>Si World</Company>
+    <Copyright>Si World, Alexander Si</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Sourse\copyW.png" />
+    <None Remove="Sourse\error.png" />
+    <None Remove="Sourse\folder-6.png" />
+    <None Remove="Sourse\full-screen- Catalin Fertu.png" />
+    <None Remove="Sourse\garbage.png" />
+    <None Remove="Sourse\hourglass-3.png" />
+    <None Remove="Sourse\icons8-xx.png" />
+    <None Remove="Sourse\info.png" />
+    <None Remove="Sourse\save.png" />
+    <None Remove="Sourse\screen-area.png" />
+    <None Remove="Sourse\settings-5.png" />
+    <None Remove="Sourse\success.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfLibrary\M2ViewModelLib\M2ViewModelLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Sourse\copyW.png" />
+    <Resource Include="Sourse\error.png" />
+    <Resource Include="Sourse\folder-6.png" />
+    <Resource Include="Sourse\full-screen- Catalin Fertu.png" />
+    <Resource Include="Sourse\garbage.png" />
+    <Resource Include="Sourse\hourglass-3.png" />
+    <Resource Include="Sourse\icons8-xx.png" />
+    <Resource Include="Sourse\info.png" />
+    <Resource Include="Sourse\save.png" />
+    <Resource Include="Sourse\screen-area.png" />
+    <Resource Include="Sourse\settings-5.png" />
+    <Resource Include="Sourse\success.png" />
+  </ItemGroup>
+
+</Project>

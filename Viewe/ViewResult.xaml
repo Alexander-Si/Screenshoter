@@ -1,0 +1,84 @@
+﻿<Window x:Class="Screenshoter.Viewe.ViewResult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Screenshoter.Viewe"
+      xmlns:vm="clr-namespace:Screenshoter.ViewModels" d:DataContext="{d:DesignInstance Type=vm:ViewResultViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" MinWidth="200" MinHeight="200" Background="{x:Null}" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
+
+    <Border BorderThickness="2" Background="#FF2C2C2C" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown" MinWidth="200" MinHeight="200">
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF2760F9"/>
+                <GradientStop Color="#FFEA20CE" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Margin="2" Grid.Row="1" CornerRadius="10">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4058F4"/>
+                        <GradientStop Color="#FFE621CF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image Margin="6" Source="{Binding ScreenshotImage}" RenderOptions.BitmapScalingMode="Fant"/>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Command="{Binding SaveScreenshot}" Margin="3" Grid.Row="1" Grid.Column="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF2B5FF8"/>
+                            <GradientStop Color="#FF4359E5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="/Sourse/save.png" Height="30" RenderOptions.BitmapScalingMode="Fant"/>
+                        <TextBlock Margin="5,0,0,0" Text="Save" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding FastSaveScreenshot}" Margin="3" Grid.Row="1" Grid.Column="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF2B5FF8"/>
+                            <GradientStop Color="#FF4359E5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="/Sourse/hourglass-3.png" Height="30"  RenderOptions.BitmapScalingMode="Fant"/>
+                        <TextBlock Margin="5,0,0,0" Text="Fast Save" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding CopyScreenshot}" Margin="3" Grid.Row="1" Grid.Column="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF2B5FF8"/>
+                            <GradientStop Color="#FF4359E5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="/Sourse/copyW.png" Height="30"  RenderOptions.BitmapScalingMode="Fant"/>
+                        <TextBlock Margin="5,0,0,0" Text="Copy To Buffer" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding DeleteScreenshot}" Margin="3" Grid.Row="1" Grid.Column="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF2B5FF8"/>
+                            <GradientStop Color="#FF4359E5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="/Sourse/garbage.png" Height="30"  RenderOptions.BitmapScalingMode="Fant"/>
+                        <TextBlock Margin="5,0,0,0" Text="Delete" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

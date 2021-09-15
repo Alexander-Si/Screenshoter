@@ -1,0 +1,105 @@
+﻿<Window x:Class="Screenshoter.Viewe.Screenshoter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="clr-namespace:Screenshoter.ViewModels"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Screenshoter.Viewe"
+        mc:Ignorable="d" Height="150" Width="400" ResizeMode="NoResize" WindowStyle="None" Background="{x:Null}" Foreground="White" Visibility="Visible" AllowsTransparency="True">
+    <Window.DataContext>
+        <vm:ScreenshoterViewModel/>
+    </Window.DataContext>
+    <Border Background="#FF2C2C2C" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown" BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF2760F9"/>
+                <GradientStop Color="#FFEA20CE" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Screenshoter" FontSize="18" VerticalAlignment="Center"/>
+            <Button Command="{Binding FullScreen}" Margin="3" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5D54CB"/>
+                        <GradientStop Color="#FF9A3AE0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/full-screen- Catalin Fertu.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Full Screen" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding AreaScreen}" Margin="3" Grid.Row="1" Grid.Column="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5D54CB"/>
+                        <GradientStop Color="#FF9A3AE0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/screen-area.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Screen Area" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding OpenExplorer}" Margin="3" Grid.Row="2" Grid.Column="0">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA138DE"/>
+                        <GradientStop Color="#FFDB25D1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/folder-6.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Default Folder" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="3" Grid.Row="2" Grid.Column="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA138DE"/>
+                        <GradientStop Color="#FFDB25D1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/settings-5.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Settings" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="3" Grid.Row="2" Grid.Column="2">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA138DE"/>
+                        <GradientStop Color="#FFDB25D1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/info.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Info and Support" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="3" Grid.Row="1" Grid.Column="2" Click="CloseExe">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5D54CB"/>
+                        <GradientStop Color="#FF9A3AE0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Height="35" Width="35" RenderOptions.BitmapScalingMode="Fant" Source="/Sourse/error.png"/>
+                    <TextBlock Margin="5,0,0,0" Text="Close" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Border>
+</Window>
