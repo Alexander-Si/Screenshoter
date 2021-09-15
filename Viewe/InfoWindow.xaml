@@ -4,9 +4,52 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Screenshoter.Viewe"
-        mc:Ignorable="d"
-        Title="InfoWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        mc:Ignorable="d" Height="450" Width="800" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Foreground="White" MinWidth="800" MinHeight="450">
+    <Border Background="#FF2C2C2C" CornerRadius="10" MouseLeftButtonDown="Move" BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF2760F9"/>
+                <GradientStop Color="#FFEA20CE" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Margin="100,7" Content="Close" Click="Button_Click" FontSize="16" Foreground="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2B5FF8"/>
+                        <GradientStop Color="#FF4058F4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Margin="4" Grid.Row="1" FontSize="14" TextWrapping="Wrap">
+                <Run Text="This program is designed for convenient creation of screenshots."/><LineBreak/>
+                <Run Text="The functions of this program include:"/><LineBreak/>
+                <Run Text="1. creating a screenshot of the entire screen (if you have several monitors, the screenshot will capture everything)"/><LineBreak/>
+                <Run Text="2. create a screenshot from the selected area of the screen using a convenient tool for selecting the area."/><LineBreak/>
+                <Run Text="3. Preview and save the result in one of the supported image file formats:"/><LineBreak/>
+                <Run Text="JPEG, PNG, &quot; GIF, TIFF, BMP, and so on."/><LineBreak/>
+                <Run Text="4. copy the result to the clipboard."/>
+            </TextBlock>
+            <TextBlock Margin="4" Grid.Row="1" Grid.Column="1" FontSize="14" TextWrapping="Wrap">
+                <Run Text="The program was created by the author Alexander Si as an open source project.Also, in the creation of this program, icons from the site were used:&quot;site&quot; of the authors: &quot;authors&quot;"/><LineBreak/>
+                <Run Text="If you find errors in the program, please write to me, you can contact me like this:"/><LineBreak/>
+                <Run Text="Project GitHub: "/><Hyperlink Click="Project" Foreground="#FF6D49EA">https://github.com/Alexander-Si/Screenshoter</Hyperlink><LineBreak/>
+                <Run Text="GitHub: "/><Hyperlink Click="GitHub" Foreground="#FF7447E8">https://github.com/Alexander-Si</Hyperlink><LineBreak/>
+                <Run/><LineBreak/>
+                <Run Text="Программа создана автором Alexander Si как проект с открытым исходным кодом.Также в создании данной программы использовались иконки с сайта: &quot;сайт&quot;авторов: &quot;авторы&quot;"/><LineBreak/>
+                <Run Text="Если вы обнаружили ошибки в работе программы, пожалуйста напишите мне, связаться со мной можно так:"/><LineBreak/>
+                <Run Text="Git Hub проекта: "/><Hyperlink Click="Project" Foreground="#FFB531DA">https://github.com/Alexander-Si/Screenshoter</Hyperlink><LineBreak/>
+                <Run Text="Git Hub: "/><Hyperlink Click="GitHub" Foreground="#FFC62CD6">https://github.com/Alexander-Si</Hyperlink><LineBreak/>
+                <Run Text="VK: "/><Hyperlink Click="VK" Foreground="#FFCF29D4">https://vk.com/alexander_si_w</Hyperlink><LineBreak/>
+            </TextBlock>
+        </Grid>
+    </Border>
 </Window>

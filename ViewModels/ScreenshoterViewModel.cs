@@ -1,6 +1,7 @@
 ﻿using M2ViewModelLib.ViewModels.Basic;
 using Screenshoter.Models;
 using Screenshoter.Viewe;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows;
@@ -32,6 +33,8 @@ namespace Screenshoter.ViewModels
 		private ICommand _AreaScreen;
 		public ICommand OpenExplorer => _OpenExplorer ??= new RelayCommand(FileSaver.OpenExplorer);
 		private ICommand _OpenExplorer;
+		public ICommand OpenInfo => _OpenInfo ??= new RelayCommand(OpenInfoExe);
+		private ICommand _OpenInfo;
 
 		/// <summary> Создать скриншот из области экрана. </summary>
 		private void MakeAreaScreen()
@@ -54,6 +57,12 @@ namespace Screenshoter.ViewModels
 			ViewResult VrWindow = new() { DataContext = vm };
 			vm.ThisWindow = VrWindow;
 			VrWindow.Show();
+		}
+		
+		private void OpenInfoExe()
+		{
+			InfoWindow VrWindow = new();
+			VrWindow.ShowDialog();
 		}
 
 		/// <summary> Показать окно (после создания скриншота) </summary>

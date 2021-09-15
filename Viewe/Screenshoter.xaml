@@ -76,7 +76,7 @@
                     <TextBlock Margin="5,0,0,0" Text="Settings" Width="70" Foreground="White" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Margin="3" Grid.Row="2" Grid.Column="2">
+            <Button Command="{Binding OpenInfo}" Margin="3" Grid.Row="2" Grid.Column="2">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFA138DE"/>
