@@ -1,9 +1,12 @@
 ﻿using M2ViewModelLib.ViewModels.Basic;
 using Screenshoter.Models;
 using System;
+using System.Drawing;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using Screenshoter.Viewe;
 
 namespace Screenshoter.ViewModels
 {
@@ -15,6 +18,12 @@ namespace Screenshoter.ViewModels
 			HeightSize = 200;
 			Marging = new Thickness(200, 200, 0, 0);
 		}
+
+		public Bitmap Screenshot { get => _Screenshot; set { _Screenshot = value; ScreenshotImage = BitmapConverter.ConvertToBitmapSourse(value); } }
+		private Bitmap _Screenshot;
+		/// <summary> Созданое представление скриншота. </summary>
+		public BitmapSource ScreenshotImage { get => _ScreenshotImage; set { _ScreenshotImage = value; OnPropertyChanged(); } }
+		private BitmapSource _ScreenshotImage;
 
 		/// <summary> Минимальные размеры выделеной области. </summary>
 		public static (double x, double y) SelectMinSize = (164, 100);
@@ -88,7 +97,17 @@ namespace Screenshoter.ViewModels
 		private void CreateAreaExe()
 		{
 			ThisWindow.Visibility = Visibility.Hidden;
-			ScreenshotMaker.MakeAreaScreenAsynk((int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
+			if(ScreenshoterViewModel.AppSettings.IsFreezeScreen)
+			{
+				ScreenshotMaker.CutTheScreenAsynk(Screenshot, (int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
+			}
+			else
+			{
+				ScreenshotMaker.MakeAreaScreenAsynk((int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
+			}
+			Screenshot?.Dispose();
+			Screenshot = null;
+			ScreenshotImage = null;
 			ThisWindow.Close();
 		}
 	}

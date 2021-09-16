@@ -7,8 +7,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Screenshoter.Viewe" xmlns:viewmodels="clr-namespace:Screenshoter.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SASelectorViewModel}"
         mc:Ignorable="d"
-        Height="450" Width="800" Foreground="White" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+        Height="450" Width="800" Foreground="White" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" ShowInTaskbar="False" Topmost="True">
     <Grid x:Name="LayoutRoot" Background="#19343434" MouseRightButtonDown="Window_MouseLeftButtonDown" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown">
+        <Image Source="{Binding ScreenshotImage}"/>
         <Border x:Name="SizeBox" MinHeight="100" MinWidth="100" Margin="{Binding Marging, Mode=TwoWay}" Height="{Binding HeightSize, Mode=TwoWay}" Width="{Binding WightSize, Mode=TwoWay}" Cursor="SizeAll" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#19000000">
             <Grid>
                 <Rectangle Stroke="White" RadiusX="10" RadiusY="10" StrokeDashArray="6 3" StrokeThickness="3"/>

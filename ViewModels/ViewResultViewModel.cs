@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using M2ViewModelLib.ViewModels.Basic;
-using Microsoft.Win32;
+﻿using M2ViewModelLib.ViewModels.Basic;
 using Screenshoter.Models;
 using Screenshoter.Viewe;
+using System.Drawing;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Screenshoter.ViewModels
 {
@@ -51,7 +41,7 @@ namespace Screenshoter.ViewModels
 		}
 		/// <summary> Скопировать в буфер обмена. </summary>
 		private void Copy()
-		{ 
+		{
 			Saver.CopyToClipboard(_ScreenshotImage);
 			Delite();
 		}
@@ -62,8 +52,8 @@ namespace Screenshoter.ViewModels
 			Delite();
 		}
 		/// <summary> Закрытие этого окна и удаление скриншота. </summary>
-		private void Delite() 
-		{ 
+		private void Delite()
+		{
 			Screenshot.Dispose();
 			ThisWindow.Close();
 		}
@@ -71,6 +61,7 @@ namespace Screenshoter.ViewModels
 		~ViewResultViewModel()
 		{
 			Screenshot.Dispose();
+			Screenshot = null;
 			ScreenshotImage = null;
 		}
 

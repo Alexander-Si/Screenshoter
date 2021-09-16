@@ -16,5 +16,9 @@ namespace Screenshoter.Models
 		/// <param name="wight"> Ширина сохраняемой области. </param>
 		/// <param name="height"> Высота сохраняемой области. </param>
 		public static async void MakeAreaScreenAsynk(int left, int top, int wight, int height) => OnEndCreateScreenshot?.Invoke(await Task.Run(() => MakeAreaScreen(left, top, wight, height)));
+
+		public static async void CutTheScreenAsynk(Bitmap bitmap, int left, int top, int wight, int height) => OnEndCreateScreenshot?.Invoke(await Task.Run(() => CutTheScreen(bitmap, left, top, wight, height)));
+
+		public static async void CutTheScreenAsynk(Bitmap bitmap, Point location, Size size) => OnEndCreateScreenshot?.Invoke(await Task.Run(() => CutTheScreen(bitmap, location, size)));
 	}
 }
