@@ -7,13 +7,14 @@ namespace Screenshoter.Models
 	{
 		/// <summary> Сохранить всю область экрана. </summary>
 		/// <returns> Вся облась экрана в виде Bitmap. </returns>
-		public static Bitmap MakeFullScreen()
+		public static Screenshot MakeFullScreen()
 		{
 			(int wight, int height) size = ((int)SystemParameters.VirtualScreenWidth, (int)SystemParameters.VirtualScreenHeight);
 			Bitmap bmp = new Bitmap(size.wight, size.height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 			Graphics graphics = Graphics.FromImage(bmp);
 			graphics.CopyFromScreen(0, 0, 0, 0, bmp.Size);
-			return bmp;
+			graphics.Dispose();
+			return new Screenshot(bmp);
 		}
 		/// <summary> Сохранить область экрана. </summary>
 		/// <param name="left"> Отступ от левого края экрана. </param>
@@ -21,30 +22,33 @@ namespace Screenshoter.Models
 		/// <param name="wight"> Ширина сохраняемой области. </param>
 		/// <param name="height"> Высота сохраняемой области. </param>
 		/// <returns> Облась экрана в виде Bitmap. </returns>
-		public static Bitmap MakeAreaScreen(int left, int top, int wight, int height)
+		public static Screenshot MakeAreaScreen(int left, int top, int wight, int height)
 		{
 			CheckScreen(ref left, ref top, ref wight, ref height);
 			Bitmap bmp = new Bitmap(wight, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 			Graphics graphics = Graphics.FromImage(bmp);
 			graphics.CopyFromScreen(left, top, 0, 0, bmp.Size);
-			return bmp;
+			graphics.Dispose();
+			return new Screenshot(bmp);
 		}
 
-		public static Bitmap CutTheScreen(Bitmap screen, System.Drawing.Point location, System.Drawing.Size size)
+		public static Screenshot CutTheScreen(Screenshot screen, System.Drawing.Point location, System.Drawing.Size size)
 		{
 			var rect = new Rectangle(location, size);
-			Bitmap bmp = screen.Clone(rect, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-			screen.Dispose();
-			return bmp;
+			Bitmap bmp = screen.ScreenshotBitmap.Clone(rect, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+			screen = null;
+			System.GC.Collect();
+			return new Screenshot(bmp);
 		}
 
-		public static Bitmap CutTheScreen(Bitmap screen, int left, int top, int wight, int height)
+		public static Screenshot CutTheScreen(Screenshot screen, int left, int top, int wight, int height)
 		{
 			CheckScreen(ref left, ref top, ref wight, ref height);
 			var rect = new Rectangle(left, top, wight, height);
-			Bitmap bmp = screen.Clone(rect, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-			screen.Dispose();
-			return bmp;
+			Bitmap bmp = screen.ScreenshotBitmap.Clone(rect, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+			screen = null;
+			System.GC.Collect();
+			return new Screenshot(bmp);
 		}
 
 		private static void CheckScreen(ref int left, ref int top, ref int wight, ref int height)

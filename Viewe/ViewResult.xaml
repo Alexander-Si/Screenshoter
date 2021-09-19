@@ -27,7 +27,7 @@
                         <GradientStop Color="#FFE621CF" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Image Margin="6" Source="{Binding ScreenshotImage}" RenderOptions.BitmapScalingMode="Fant"/>
+                <Image Margin="6" Source="{Binding Screenshot.ScreenshotImage}" RenderOptions.BitmapScalingMode="Fant"/>
             </Border>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Command="{Binding SaveScreenshot}" Margin="3" Grid.Row="1" Grid.Column="1">

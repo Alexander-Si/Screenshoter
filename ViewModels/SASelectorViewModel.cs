@@ -19,11 +19,8 @@ namespace Screenshoter.ViewModels
 			Marging = new Thickness(200, 200, 0, 0);
 		}
 
-		public Bitmap Screenshot { get => _Screenshot; set { _Screenshot = value; ScreenshotImage = BitmapConverter.ConvertToBitmapSourse(value); } }
-		private Bitmap _Screenshot;
-		/// <summary> Созданое представление скриншота. </summary>
-		public BitmapSource ScreenshotImage { get => _ScreenshotImage; set { _ScreenshotImage = value; OnPropertyChanged(); } }
-		private BitmapSource _ScreenshotImage;
+		public Screenshot Screenshot { get => _Screenshot; set { _Screenshot = value; OnPropertyChanged(); } }
+		private Screenshot _Screenshot;
 
 		/// <summary> Минимальные размеры выделеной области. </summary>
 		public static (double x, double y) SelectMinSize = (164, 100);
@@ -105,9 +102,6 @@ namespace Screenshoter.ViewModels
 			{
 				ScreenshotMaker.MakeAreaScreenAsynk((int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
 			}
-			Screenshot?.Dispose();
-			Screenshot = null;
-			ScreenshotImage = null;
 			ThisWindow.Close();
 		}
 	}

@@ -34,9 +34,13 @@ namespace Screenshoter.Viewe
 		private bool IsDragDrop, IsDragPoint1, IsDragPoint2;
 		private Point Pos = new Point();
 		/// <summary> Закрытие Окна на левую кнопку мышки по фону. </summary>
-		private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => Close();
+		private void CloseWindow(object sender, MouseButtonEventArgs e) 
+		{
+			e.Handled = true;
+			Close();
+		}
 		/// <summary> Переместить выделеную область на это место. </summary>
-		private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		private void LayoutRootLBDown(object sender, MouseButtonEventArgs e)
 		{
 			if (IsDragDrop || IsDragPoint1 || IsDragPoint2)
 				return;
