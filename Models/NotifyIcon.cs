@@ -27,7 +27,7 @@ namespace Screenshoter.Models
 				hIcon = ico.Handle,
 				hWnd = new WindowInteropHelper(parent).Handle,
 				uCallbackMessage = 0x5700,
-				szTip = "Screenshot created by Si\nDouble click to show/hide menu.",
+				szTip = "Screenshoter created by Si\nRight click to show/hide menu.\nLeft Click to create Screenshot.",
 			};
 			_Src = HwndSource.FromHwnd(_Data.hWnd);
 			_Src.AddHook(new HwndSourceHook(WndProc));
