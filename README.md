@@ -17,4 +17,4 @@ The program allows you to create screenshots of both the entire screen and the s
 Icons from the site were used in this repository flaticon.com
 Authors: Catalin Vertu, Freepik
 
-Build Project: https://1drv.ms/u/s!Ai8ZHJJAb4GZ81aYbU-reM3RlIi7?e=imxPai
+The latest stable version built: https://1drv.ms/u/s!Ai8ZHJJAb4GZ81aYbU-reM3RlIi7?e=imxPai
