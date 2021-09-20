@@ -96,11 +96,11 @@ namespace Screenshoter.ViewModels
 			ThisWindow.Visibility = Visibility.Hidden;
 			if(ScreenshoterViewModel.AppSettings.IsFreezeScreen)
 			{
-				ScreenshotMaker.CutTheScreenAsynk(Screenshot, (int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
+				_ = ScreenshotMaker.CutTheScreenAsynk(Screenshot, (int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
 			}
 			else
 			{
-				ScreenshotMaker.MakeAreaScreenAsynk((int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
+				_ = ScreenshotMaker.MakeAreaScreenAsynk((int)Marging.Left, (int)Marging.Top, Size.x, Size.y);
 			}
 			ThisWindow.Close();
 		}

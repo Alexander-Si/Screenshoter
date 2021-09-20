@@ -10,6 +10,7 @@ namespace Screenshoter.Models
 		{
 			if (bmp is null)
 				throw new NullReferenceException();
+			ScreenshotBitmap = bmp;
 			ScreenshotImage = BitmapConverter.ConvertToBitmapSourse(bmp);
 		}
 
@@ -20,7 +21,7 @@ namespace Screenshoter.Models
 
 		~Screenshot()
 		{
-			ScreenshotBitmap?.Dispose();
+			ScreenshotBitmap.Dispose();
 			ScreenshotBitmap = null;
 			ScreenshotImage = null;
 			GC.Collect();
