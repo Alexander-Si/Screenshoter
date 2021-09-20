@@ -75,7 +75,7 @@ namespace Screenshoter.ViewModels
 		private void MakeFullScreen()
 		{
 			StartControllLock();
-			ScreenshotMaker.MakeFullScreenAsynk();
+			_ = ScreenshotMaker.MakeFullScreenAsynk();
 		}
 
 		/// <summary> По завершению создания скриншота. </summary>
@@ -102,10 +102,12 @@ namespace Screenshoter.ViewModels
 
 		private void ShowOrHideWindow() => ThisWindow.Visibility = ThisWindow.Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
 
+		private bool _ISHideWindow;
 		private void StartControllLock()
 		{
 			KeyListener.ClearHook();
 			NotifyIcon.IsChangedClick = false;
+			_ISHideWindow = ThisWindow.Visibility == Visibility.Hidden;
 			HideWindow();
 		}
 
@@ -113,7 +115,7 @@ namespace Screenshoter.ViewModels
 		{
 			KeyListener.SetHook();
 			NotifyIcon.IsChangedClick = true;
-			if (!AppSettings.IsBackgroundProcess)
+			if (!_ISHideWindow)
 				ShowWindow();
 		}
 
