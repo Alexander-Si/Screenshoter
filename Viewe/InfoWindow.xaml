@@ -35,16 +35,16 @@
                 <Run Text="1. creating a screenshot of the entire screen (if you have several monitors, the screenshot will capture everything)"/><LineBreak/>
                 <Run Text="2. create a screenshot from the selected area of the screen using a convenient tool for selecting the area."/><LineBreak/>
                 <Run Text="3. Preview and save the result in one of the supported image file formats:"/><LineBreak/>
-                <Run Text="JPEG, PNG, &quot; GIF, TIFF, BMP, and so on."/><LineBreak/>
+                <Run Text="JPEG, PNG, GIF, TIFF, BMP, and so on."/><LineBreak/>
                 <Run Text="4. copy the result to the clipboard."/>
             </TextBlock>
             <TextBlock Margin="4" Grid.Row="1" Grid.Column="1" FontSize="14" TextWrapping="Wrap">
-                <Run Text="The program was created by the author Alexander Si as an open source project.Also, in the creation of this program, icons from the site were used:&quot;site&quot; of the authors: &quot;authors&quot;"/><LineBreak/>
+                <Run Text="The program was created by the author Alexander Si as an open source project.Also, in the creation of this program, icons from the site were used: 'flaticon.com' of the authors: 'Catalin Fertu, Freepik'"/><LineBreak/>
                 <Run Text="If you find errors in the program, please write to me, you can contact me like this:"/><LineBreak/>
                 <Run Text="Project GitHub: "/><Hyperlink Click="Project" Foreground="#FF6D49EA">https://github.com/Alexander-Si/Screenshoter</Hyperlink><LineBreak/>
                 <Run Text="GitHub: "/><Hyperlink Click="GitHub" Foreground="#FF7447E8">https://github.com/Alexander-Si</Hyperlink><LineBreak/>
                 <Run/><LineBreak/>
-                <Run Text="Программа создана автором Alexander Si как проект с открытым исходным кодом.Также в создании данной программы использовались иконки с сайта: &quot;сайт&quot;авторов: &quot;авторы&quot;"/><LineBreak/>
+                <Run Text="Программа создана автором Alexander Si как проект с открытым исходным кодом.Также в создании данной программы использовались иконки с сайта: 'flaticon.com' авторов: 'Catalin Fertu, Freepik'"/><LineBreak/>
                 <Run Text="Если вы обнаружили ошибки в работе программы, пожалуйста напишите мне, связаться со мной можно так:"/><LineBreak/>
                 <Run Text="Git Hub проекта: "/><Hyperlink Click="Project" Foreground="#FFB531DA">https://github.com/Alexander-Si/Screenshoter</Hyperlink><LineBreak/>
                 <Run Text="Git Hub: "/><Hyperlink Click="GitHub" Foreground="#FFC62CD6">https://github.com/Alexander-Si</Hyperlink><LineBreak/>

@@ -10,7 +10,7 @@
         Height="450" Width="800" Foreground="White" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" ShowInTaskbar="False" Topmost="True">
     <Grid x:Name="LayoutRoot" Background="#19343434" MouseRightButtonUp="CloseWindow" MouseLeftButtonDown="LayoutRootLBDown">
         <Image Source="{Binding Screenshot.ScreenshotImage}"/>
-        <Border x:Name="SizeBox" MinHeight="100" MinWidth="100" Margin="{Binding Marging, Mode=TwoWay}" Height="{Binding HeightSize, Mode=TwoWay}" Width="{Binding WightSize, Mode=TwoWay}" Cursor="SizeAll" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#19000000">
+        <Border x:Name="SizeBox" MinHeight="100" MinWidth="100" Margin="{Binding Marging, Mode=TwoWay}" Height="{Binding HeightSize, Mode=TwoWay}" Width="{Binding WightSize, Mode=TwoWay}" Cursor="SizeAll" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#19131313" ClipToBounds="True" CornerRadius="12,12,12,12" BorderThickness="0,0,0,0">
             <Grid>
                 <Rectangle Stroke="White" RadiusX="10" RadiusY="10" StrokeDashArray="6 3" StrokeThickness="3"/>
                 <StackPanel Margin="0,0,6,6" Height="24" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
